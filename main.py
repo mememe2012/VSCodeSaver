@@ -19,12 +19,16 @@ EXTENSIONS_DIRS = [
 ]
 SAVES_DIR = Path('saves')
 
+try:os.mkdir(SAVES_DIR)
+except:pass
+
 class VSCodeSaverApp:
     def __init__(self, root):
         self.root = root
         self.root.title("VSCode 配置管理器")
         self.root.geometry("500x400")
         self.root.resizable(False, False)
+        self.root.iconbitmap("icon.ico")
 
         title_label = tk.Label(root, text="VSCode 配置管理器", font=("Arial", 16, "bold"))
         title_label.pack(pady=10)
